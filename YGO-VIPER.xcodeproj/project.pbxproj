@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4F1E868727DA76B400085931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E868627DA76B400085931 /* AppDelegate.swift */; };
 		4F1E868927DA76B400085931 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E868827DA76B400085931 /* SceneDelegate.swift */; };
-		4F1E868B27DA76B400085931 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E868A27DA76B400085931 /* ViewController.swift */; };
 		4F1E869027DA76B500085931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E868F27DA76B500085931 /* Assets.xcassets */; };
 		4F1E869327DA76B500085931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E869127DA76B500085931 /* LaunchScreen.storyboard */; };
 		4F1E869B27DA775800085931 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E869A27DA775800085931 /* HomeView.swift */; };
@@ -23,7 +22,6 @@
 		4F1E868327DA76B400085931 /* YGO-VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YGO-VIPER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1E868627DA76B400085931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F1E868827DA76B400085931 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4F1E868A27DA76B400085931 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F1E868F27DA76B500085931 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F1E869227DA76B500085931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F1E869427DA76B500085931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,19 +62,26 @@
 		4F1E868527DA76B400085931 /* YGO-VIPER */ = {
 			isa = PBXGroup;
 			children = (
-				4F1E868627DA76B400085931 /* AppDelegate.swift */,
-				4F1E868827DA76B400085931 /* SceneDelegate.swift */,
-				4F1E868A27DA76B400085931 /* ViewController.swift */,
-				4F1E868F27DA76B500085931 /* Assets.xcassets */,
-				4F1E869127DA76B500085931 /* LaunchScreen.storyboard */,
-				4F1E869427DA76B500085931 /* Info.plist */,
 				4F1E869A27DA775800085931 /* HomeView.swift */,
 				4F1E869C27DA776600085931 /* HomeInteractor.swift */,
 				4F1E869E27DA777800085931 /* HomePresenter.swift */,
 				4F1E86A027DA779700085931 /* Entity.swift */,
 				4F1E86A227DA77B200085931 /* HomeRouter.swift */,
+				4F1E86A427DA783400085931 /* VIPER */,
+				4F1E868827DA76B400085931 /* SceneDelegate.swift */,
+				4F1E868627DA76B400085931 /* AppDelegate.swift */,
+				4F1E868F27DA76B500085931 /* Assets.xcassets */,
+				4F1E869127DA76B500085931 /* LaunchScreen.storyboard */,
+				4F1E869427DA76B500085931 /* Info.plist */,
 			);
 			path = "YGO-VIPER";
+			sourceTree = "<group>";
+		};
+		4F1E86A427DA783400085931 /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VIPER;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +154,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F1E868B27DA76B400085931 /* ViewController.swift in Sources */,
 				4F1E869B27DA775800085931 /* HomeView.swift in Sources */,
 				4F1E86A127DA779700085931 /* Entity.swift in Sources */,
 				4F1E868727DA76B400085931 /* AppDelegate.swift in Sources */,

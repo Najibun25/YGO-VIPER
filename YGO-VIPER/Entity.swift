@@ -6,3 +6,27 @@
 //
 
 import Foundation
+
+//Model,
+
+
+struct YGOdb: Codable {
+    let data: [Data]
+}
+
+struct Data: Codable {
+    let id: String
+    let name: String
+    let type: String
+    let desc: String
+    let level: String
+    let race: String
+    let attribute: String
+    let archetype: String
+    let card_images: [CardImages]
+}
+
+struct CardImages: Codable {
+    let image_url: String
+    let image_url_small: String
+}
