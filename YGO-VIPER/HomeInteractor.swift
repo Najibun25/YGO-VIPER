@@ -41,6 +41,7 @@ class HomeInteractorYGO: HomeInteractorProtocol {
             do {
                 let entities = try JSONDecoder().decode([YGOdb].self, from: data)
                 self?.presenter?.interactorDidFetchYGOdb(with: .success(entities))
+                print("Data keambil: \(entities.data.count)")
             }
             catch {
                 self?.presenter?.interactorDidFetchYGOdb(with: .failure(error))

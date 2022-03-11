@@ -40,6 +40,8 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         tableView.dataSource = self
     }
     
+    var ygodb: [YGOdb] = []
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -47,6 +49,13 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
     }
     
     func update(with ygodb: [YGOdb]) {
+        // dah diambil ama intreaktor, dan kalau presenter dah nge okein pake switch update di view
+        DispatchQueue.main.async {
+            self .ygodb = ygodb
+            self.tableView.reloadData()
+            self.tableView.isHidden = false
+        }
+        
         
     }
     
@@ -62,6 +71,9 @@ extension HomeViewYGOController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//        cell.textLabel?.text = ygodb[indexPath.row].name
+//        return cell
     }
     
     

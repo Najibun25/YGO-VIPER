@@ -40,6 +40,11 @@ class HomePresenterYGO: HomePresenterProtocol{
     }
     
     func interactorDidFetchYGOdb(with result: Result<[YGOdb], Error>) {
-        
+        switch result {
+        case .success(let ygodb):
+            view?.update(with: ygodb)
+        case .failure:
+            view?.update(with: "Something wrong broo")
+        }
     }
 }
