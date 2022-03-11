@@ -13,6 +13,11 @@ import Foundation
 //reff to interactor, router, view
 // need
 
+enum FetchError: Error {
+    case failed
+}
+
+
 protocol HomePresenterProtocol {
     var router: HomeRouterProtocol?  { get set }
     var interactor: HomeInteractorProtocol? {get set}
@@ -29,6 +34,10 @@ class HomePresenterYGO: HomePresenterProtocol{
     var interactor: HomeInteractorProtocol?
     
     var view: HomeViewProtocol?
+    
+    init() {
+        interactor?.getYGOdb()
+    }
     
     func interactorDidFetchYGOdb(with result: Result<[YGOdb], Error>) {
         
