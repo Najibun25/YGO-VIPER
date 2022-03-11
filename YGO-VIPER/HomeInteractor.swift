@@ -32,8 +32,8 @@ class HomeInteractorYGO: HomeInteractorProtocol {
     
     func getYGOdb() {
         guard let  url = URL(string: "https://db.ygoprodeck.com/api/v7/cardinfo.php?&startdate=01/01/2022&enddate=02/28/2022&dateregion=tcg_date") else { return }
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let data = data, error == nil else {
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data1, _, error in
+            guard let data = data1, error == nil else {
                 //passsing error
                 self?.presenter?.interactorDidFetchYGOdb(with: .failure(FetchError.failed))
                 return
@@ -41,7 +41,7 @@ class HomeInteractorYGO: HomeInteractorProtocol {
             do {
                 let entities = try JSONDecoder().decode([YGOdb].self, from: data)
                 self?.presenter?.interactorDidFetchYGOdb(with: .success(entities))
-                print("Data keambil: \(entities.data.count)")
+                //print("Data keambil: \(entities.data)")
             }
             catch {
                 self?.presenter?.interactorDidFetchYGOdb(with: .failure(error))
