@@ -39,7 +39,7 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        print("jumalh keambil = \(ygodb.count)")
+        //print("jumalh keambil = \(ygodb.count)")
     }
     
     
@@ -50,17 +50,19 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
     
     func update(with ygodb: [YGOdb]) {
         // dah diambil ama intreaktor, dan kalau presenter dah nge okein pake switch update di view
+        print("got user")
         DispatchQueue.main.async {
-            self .ygodb = ygodb
+            self.ygodb = ygodb
             self.tableView.reloadData()
             self.tableView.isHidden = false
+            //print("jumalh keambil = \(ygodb.count)")
         }
         
         
     }
     
     func update(with error: String){
-        
+        print(error)
     }
 }
 
@@ -70,10 +72,9 @@ extension HomeViewYGOController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.textLabel?.text = ygodb[indexPath.row].name
-//        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = ygodb[indexPath.row].name
+        return cell
     }
     
     

@@ -15,6 +15,7 @@ import Foundation
 // all api yugi = https://db.ygoprodeck.com/api/v7/cardinfo.php 11 rb data
 // card yugi yang keluar di tahun ini https://db.ygoprodeck.com/api/v7/cardinfo.php?&startdate=01/01/2022&enddate=02/28/2022&dateregion=tcg_date
 // api search = https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=tri-brigade
+//try https://jsonplaceholder.typicode.com/users
 
 protocol HomeInteractorProtocol {
     var presenter: HomePresenterProtocol? { get set }
@@ -31,7 +32,8 @@ class HomeInteractorYGO: HomeInteractorProtocol {
     var presenter: HomePresenterProtocol?
     
     func getYGOdb() {
-        guard let  url = URL(string: "https://db.ygoprodeck.com/api/v7/cardinfo.php?&startdate=01/01/2022&enddate=02/28/2022&dateregion=tcg_date") else { return }
+        print("Start fetching")
+        guard let  url = URL(string: "https://jsonplaceholder.typicode.com/users") else { return }
         let task = URLSession.shared.dataTask(with: url) { [weak self] data1, _, error in
             guard let data = data1, error == nil else {
                 //passsing error
