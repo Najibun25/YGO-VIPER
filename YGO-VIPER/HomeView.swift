@@ -31,10 +31,20 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         table.isHidden = true
         return table
     }()
+    
+    //bikin kalo misal salah kelaur label
+    private let label: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.isHidden = true
+        return label
+    }()
+    
     var ygodb: [YGOdb] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(label)
         view.backgroundColor = .systemBlue
         view.addSubview(tableView)
         tableView.delegate = self
@@ -46,23 +56,31 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+        label.center = view.center
+        label.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
+        label.center = view.center
     }
     
     func update(with ygodb: [YGOdb]) {
         // dah diambil ama intreaktor, dan kalau presenter dah nge okein pake switch update di view
-        print("got user")
+        //print("got user")
         DispatchQueue.main.async {
             self.ygodb = ygodb
             self.tableView.reloadData()
             self.tableView.isHidden = false
             //print("jumalh keambil = \(ygodb.count)")
         }
-        
-        
     }
     
     func update(with error: String){
-        print(error)
+        print("got user")
+        DispatchQueue.main.async {
+            self.ygodb = []
+            self.label.text = error
+            self.tableView.isHidden = true
+            self.label.isHidden = false
+            //print("jumalh keambil = \(ygodb.count)")
+        }
     }
 }
 

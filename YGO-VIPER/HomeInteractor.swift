@@ -16,6 +16,7 @@ import Foundation
 // card yugi yang keluar di tahun ini https://db.ygoprodeck.com/api/v7/cardinfo.php?&startdate=01/01/2022&enddate=02/28/2022&dateregion=tcg_date
 // api search = https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=tri-brigade
 //try https://jsonplaceholder.typicode.com/users
+//backbone
 
 protocol HomeInteractorProtocol {
     var presenter: HomePresenterProtocol? { get set }
@@ -24,7 +25,6 @@ protocol HomeInteractorProtocol {
     func getYGOdb()
     
     //need to tell presenter
-    
     
 }
 

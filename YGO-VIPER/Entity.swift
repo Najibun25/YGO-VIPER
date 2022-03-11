@@ -13,6 +13,7 @@ import Foundation
 struct YGOdb: Codable {
     let name: String
     let email: String
+    //let emailxxx: String
 }
 
 
