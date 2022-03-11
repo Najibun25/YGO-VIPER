@@ -31,13 +31,14 @@ protocol HomePresenterProtocol {
 class HomePresenterYGO: HomePresenterProtocol{
     var router: HomeRouterProtocol?
     
-    var interactor: HomeInteractorProtocol?
+    var interactor: HomeInteractorProtocol? {
+        didSet {
+            //ngambil gey ygo dari interactor
+            interactor?.getYGOdb()
+        }
+    }
     
     var view: HomeViewProtocol?
-    
-    init() {
-        interactor?.getYGOdb()
-    }
     
     func interactorDidFetchYGOdb(with result: Result<[YGOdb], Error>) {
         switch result {
