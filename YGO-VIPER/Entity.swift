@@ -13,27 +13,27 @@ import Foundation
 
 
 struct YGOdb: Codable {
-    let data: [Data]
+    //let data: [Data]
     // let dibawah kalaau mau pake yang https://jsonplaceholder.typicode.com/users
-    //let name: String
+    let name: String
     
     // kalau pake yang news api
     //let articles: [Article]
 }
 
-struct Data: Codable {
-    let id: String
-    let name: String
-    let type: String
-    let desc: String
-    let level: String
-    let race: String
-    let attribute: String
-    let archetype: String
-    let card_images: [CardImages]
-}
+//struct Data: Codable {
+//    let id: String
+//    let name: String
+//    let type: String
+////    let desc: String
+////    let level: String
+////    let race: String
+////    let attribute: String
+////    let archetype: String
+////    let card_images: [CardImages]
+//}
 
-struct CardImages: Codable {
-    let image_url: String
-    let image_url_small: String
-}
+//struct CardImages: Codable {
+//    let image_url: String
+//    let image_url_small: String
+//}

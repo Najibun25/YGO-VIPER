@@ -31,9 +31,14 @@ protocol HomeInteractorProtocol {
 class HomeInteractorYGO: HomeInteractorProtocol {
     var presenter: HomePresenterProtocol?
     
+    struct ConstantAPI {
+        static let initialURL = URL(string: "https://jsonplaceholder.typicode.com/users")
+    }
+    
+    
     func getYGOdb() {
         print("Start fetching")
-        guard let  url = URL(string: "https://db.ygoprodeck.com/api/v7/cardinfo.php?&startdate=01/01/2022&enddate=02/28/2022&dateregion=tcg_date") else { return }
+        guard let  url = ConstantAPI.initialURL else { return }
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let data = data, error == nil else {
                 //passsing error
@@ -44,6 +49,7 @@ class HomeInteractorYGO: HomeInteractorProtocol {
                 let entities = try JSONDecoder().decode([YGOdb].self, from: data)
                 print("\(entities.count)")
                 self?.presenter?.interactorDidFetchYGOdb(with: .success(entities))
+                print(entities)
                 //print("data keambil = \(entities.count)")
                 //print("Data keambil: \(entities.data)")
                 print("di fetch")

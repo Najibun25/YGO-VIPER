@@ -90,11 +90,11 @@ extension HomeViewYGOController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        //return UITableViewCell()
         //will back when we get data fetching done
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.textLabel?.text = ygodb[indexPath.row].data.name
-//        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = ygodb[indexPath.row].name
+        return cell
     }
     
     
