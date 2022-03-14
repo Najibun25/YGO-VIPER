@@ -19,6 +19,11 @@
 		4F1E86A327DA77B200085931 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E86A227DA77B200085931 /* HomeRouter.swift */; };
 		4FAE1C7D27DEFCF600B94E4A /* DBYGOListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAE1C7B27DEFCF600B94E4A /* DBYGOListCell.swift */; };
 		4FAE1C7E27DEFCF600B94E4A /* DBYGOListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FAE1C7C27DEFCF600B94E4A /* DBYGOListCell.xib */; };
+		4FBD9A5327DF828200714C9B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD9A5127DF828200714C9B /* DetailViewController.swift */; };
+		4FBD9A5427DF828200714C9B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD9A5227DF828200714C9B /* DetailViewController.xib */; };
+		4FBD9A5627DF863D00714C9B /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD9A5527DF863D00714C9B /* DetailInteractor.swift */; };
+		4FBD9A5827DF865600714C9B /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD9A5727DF865600714C9B /* DetailPresenter.swift */; };
+		4FBD9A5A27DF866500714C9B /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD9A5927DF866500714C9B /* DetailRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		4F1E86A227DA77B200085931 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		4FAE1C7B27DEFCF600B94E4A /* DBYGOListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBYGOListCell.swift; sourceTree = "<group>"; };
 		4FAE1C7C27DEFCF600B94E4A /* DBYGOListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBYGOListCell.xib; sourceTree = "<group>"; };
+		4FBD9A5127DF828200714C9B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4FBD9A5227DF828200714C9B /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		4FBD9A5527DF863D00714C9B /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		4FBD9A5727DF865600714C9B /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		4FBD9A5927DF866500714C9B /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		90D2D833CCA6C2DF6F98B7BF /* libPods-YGO-VIPER.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YGO-VIPER.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6D06221749375AE00DB1D3 /* Pods-YGO-VIPER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YGO-VIPER.debug.xcconfig"; path = "Target Support Files/Pods-YGO-VIPER/Pods-YGO-VIPER.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,7 +68,6 @@
 				9B6D06221749375AE00DB1D3 /* Pods-YGO-VIPER.debug.xcconfig */,
 				1823615280F09F7A592FDAF4 /* Pods-YGO-VIPER.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,11 +92,8 @@
 		4F1E868527DA76B400085931 /* YGO-VIPER */ = {
 			isa = PBXGroup;
 			children = (
-				4FBD9A4E27DF31B600714C9B /* View */,
-				4F1E869C27DA776600085931 /* HomeInteractor.swift */,
-				4F1E869E27DA777800085931 /* HomePresenter.swift */,
-				4F1E86A027DA779700085931 /* Entity.swift */,
-				4F1E86A227DA77B200085931 /* HomeRouter.swift */,
+				4FBD9A4F27DF821E00714C9B /* Home */,
+				4FBD9A5027DF824700714C9B /* Detail */,
 				4F1E86A427DA783400085931 /* VIPER */,
 				4F1E868827DA76B400085931 /* SceneDelegate.swift */,
 				4F1E868627DA76B400085931 /* AppDelegate.swift */,
@@ -113,6 +119,30 @@
 				4FAE1C7C27DEFCF600B94E4A /* DBYGOListCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4FBD9A4F27DF821E00714C9B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4FBD9A4E27DF31B600714C9B /* View */,
+				4F1E869C27DA776600085931 /* HomeInteractor.swift */,
+				4F1E869E27DA777800085931 /* HomePresenter.swift */,
+				4F1E86A027DA779700085931 /* Entity.swift */,
+				4F1E86A227DA77B200085931 /* HomeRouter.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4FBD9A5027DF824700714C9B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				4FBD9A5127DF828200714C9B /* DetailViewController.swift */,
+				4FBD9A5227DF828200714C9B /* DetailViewController.xib */,
+				4FBD9A5527DF863D00714C9B /* DetailInteractor.swift */,
+				4FBD9A5727DF865600714C9B /* DetailPresenter.swift */,
+				4FBD9A5927DF866500714C9B /* DetailRouter.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		59BA84996EF8E7998B10BEEA /* Frameworks */ = {
@@ -185,6 +215,7 @@
 				4FAE1C7E27DEFCF600B94E4A /* DBYGOListCell.xib in Resources */,
 				4F1E869327DA76B500085931 /* LaunchScreen.storyboard in Resources */,
 				4F1E869027DA76B500085931 /* Assets.xcassets in Resources */,
+				4FBD9A5427DF828200714C9B /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,12 +251,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FBD9A5327DF828200714C9B /* DetailViewController.swift in Sources */,
+				4FBD9A5627DF863D00714C9B /* DetailInteractor.swift in Sources */,
 				4F1E869B27DA775800085931 /* HomeView.swift in Sources */,
 				4F1E86A127DA779700085931 /* Entity.swift in Sources */,
+				4FBD9A5827DF865600714C9B /* DetailPresenter.swift in Sources */,
 				4F1E868727DA76B400085931 /* AppDelegate.swift in Sources */,
 				4F1E869F27DA777800085931 /* HomePresenter.swift in Sources */,
 				4F1E86A327DA77B200085931 /* HomeRouter.swift in Sources */,
 				4F1E869D27DA776600085931 /* HomeInteractor.swift in Sources */,
+				4FBD9A5A27DF866500714C9B /* DetailRouter.swift in Sources */,
 				4F1E868927DA76B400085931 /* SceneDelegate.swift in Sources */,
 				4FAE1C7D27DEFCF600B94E4A /* DBYGOListCell.swift in Sources */,
 			);

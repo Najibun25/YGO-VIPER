@@ -11,7 +11,7 @@ import UIKit
 //Object
 // EntryPoint for our modul.
 
-typealias EntryPoint = HomeViewProtocol & HomeViewYGOController
+typealias EntryPoint = HomeViewYGOController
 
 protocol HomeRouterProtocol {
     //tell delegetae untuk kasih entry point di apps
@@ -19,9 +19,21 @@ protocol HomeRouterProtocol {
     var entry: EntryPoint? { get }
     
     static func start() -> HomeRouterProtocol
+    
+    func navigatetoDetail(from view: HomeViewProtocol, viewModel: Data)
 }
 
 class HomeRouterYGO: HomeRouterProtocol {
+    func navigatetoDetail(from view: HomeViewProtocol, viewModel: Data) {
+        let destinationVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        destinationVC.viewModel = viewModel
+        //destinationVC.presenter?.viewModel = viewModel
+        if let view = view as? UIViewController{
+            view.navigationController?.pushViewController(destinationVC, animated: true)
+        }
+    }
+    
+    
     var entry: EntryPoint?
     
     static func start() -> HomeRouterProtocol {

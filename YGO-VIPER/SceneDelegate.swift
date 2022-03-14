@@ -19,13 +19,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         //untuk set router
         let homeRouterYGO = HomeRouterYGO.start()
-        
         let initialVC = homeRouterYGO.entry
-        
+
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = initialVC
+        guard let initialVC = initialVC else {
+            return
+        }
+        var navigationController = UINavigationController()
+        navigationController.viewControllers = [initialVC]
+        
+        window.rootViewController = navigationController
         self.window = window
         window.makeKeyAndVisible()
+        
+        //
+        //add navigaation
+        
+//        guard let windowScene = (scene as? UIWindowScene) else { return }
+//
+//        let homeViewController = HomeViewYGOController(nibName: String(describing: HomeViewYGOController.self), bundle: nil)
+//
+//        let window = UIWindow(windowScene: windowScene)
+//
+//        window.rootViewController = UINavigationController(rootViewController: homeViewController)
+//
+//        self.window = window
+//
+//        window.makeKeyAndVisible()
         
     }
 

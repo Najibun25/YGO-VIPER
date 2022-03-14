@@ -24,6 +24,8 @@ protocol HomePresenterProtocol {
     var view: HomeViewProtocol? {get set}
 
     func interactorDidFetchYGOdb(with result: Result< [Data], Error>)
+    
+    func didSelectedz(with viewModel: Data)
 
 }
 
@@ -47,5 +49,11 @@ class HomePresenterYGO: HomePresenterProtocol{
         case .failure:
             view?.update(with: "Something wrong broo")
         }
+    }
+    
+    func didSelectedz(with viewModel: Data) {
+        guard let view = view else { return }
+        router?.navigatetoDetail(from: view, viewModel: viewModel)
+        
     }
 }

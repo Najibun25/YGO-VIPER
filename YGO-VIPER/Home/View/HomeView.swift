@@ -98,6 +98,10 @@ extension HomeViewYGOController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectedz(with: ygodb[indexPath.row])
+    }
+    
     
 }
 
