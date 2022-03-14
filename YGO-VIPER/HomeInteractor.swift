@@ -46,6 +46,7 @@ class HomeInteractorYGO: HomeInteractorProtocol {
                 return
             }
             do {
+                //something wrong ion here
                 let entities = try JSONDecoder().decode([YGOdb].self, from: data)
                 print("\(entities.count)")
                 self?.presenter?.interactorDidFetchYGOdb(with: .success(entities))
