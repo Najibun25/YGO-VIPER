@@ -8,18 +8,18 @@
 import UIKit
 import Kingfisher
 
-class DBYGoListCellViewModel {
-//    let title: String
-//    let subtitle: String
-//    let imageURL: URL?
-//    //biar galk download2 terus
-//    var imageData: Data? = nil
-//
-//    init(title: String, subtitle: String, imageURL: URL?) {
-//        self.title = title
-//        self.subtitle = subtitle
-//        self.imageURL = imageURL
-}
+//class DBYGoListCellViewModel {
+////    let title: String
+////    let subtitle: String
+////    let imageURL: URL?
+////    //biar galk download2 terus
+////    var imageData: Data? = nil
+////
+////    init(title: String, subtitle: String, imageURL: URL?) {
+////        self.title = title
+////        self.subtitle = subtitle
+////        self.imageURL = imageURL
+//}
 
 
 class DBYGOListCell: UITableViewCell {
@@ -54,12 +54,35 @@ class DBYGOListCell: UITableViewCell {
     
     
     func configureDisplay(with viewModel: Data){
+        //cardName.text = "Najib"
         cardName.text = viewModel.name
+        cardName.font = .systemFont(ofSize: 25, weight: .medium)
+        typeCard.text = viewModel.type
+        typeCard.font = .systemFont(ofSize: 10, weight: .medium)
+        levelOrStar.text = "Level/Rank : \(viewModel.level ?? 0)"
+        levelOrStar.font = .systemFont(ofSize: 10, weight: .medium)
         
-        //image
+        //image kanan
         if let imageURL = viewModel.card_images.first?.image_url_small {
             cardImagePreview.kf.setImage(with: URL(string: imageURL))
         }
+        
+        levelIconPreview.image = UIImage(systemName: "black_star")
+        
+        var imagetoLevel: String {
+        switch viewModel.type {
+        case "XYZ Monster", "XYZ Pendulum Effect Monster":
+            return "black_star"
+        case "Spell Card":
+            return "spell_icon"
+        case "Trap Card":
+            return "trap_icon"
+        case "Link Monster":
+            return "link_icon"
+        default:
+            return "red_star"
+            }
+        }
+        //levelIconPreview.image = UIImage(systemName: imagetoLevel)
     }
-    
 }
