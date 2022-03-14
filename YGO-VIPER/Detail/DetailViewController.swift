@@ -23,7 +23,7 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     var viewModel: Data?
     
     //bikin image
-    
+    //belum dibuat viper style
     
     override func viewDidLoad() {
         super.viewDidLoad()
