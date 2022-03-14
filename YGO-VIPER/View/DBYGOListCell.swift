@@ -7,6 +7,13 @@
 
 import UIKit
 
+class DBYGoListCellViewModel {
+    
+}
+
+
+
+
 class DBYGOListCell: UITableViewCell {
     
     @IBOutlet weak var levelIconPreview: UIImageView!
@@ -34,8 +41,7 @@ class DBYGOListCell: UITableViewCell {
         //cardName.textAlignment = .left
         cardName.numberOfLines = 0
         cardName.adjustsFontSizeToFitWidth = true
-        cardName.minimumScaleFactor = 0.5
-        
+        cardName.sizeToFit()
     }
     
 }

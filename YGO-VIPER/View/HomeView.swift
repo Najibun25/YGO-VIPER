@@ -27,7 +27,7 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
     //create tableview programatically
     private let tableView: UITableView = {
         let table = UITableView()
-        table.register(UINib(nibName: "DBYGOListCell", bundle: nil), forCellReuseIdentifier: DBYGOListCell.cellIdentifier)
+        table.register(UINib(nibName: DBYGOListCell.nibName, bundle: nil), forCellReuseIdentifier: DBYGOListCell.cellIdentifier)
         table.isHidden = true
         return table
     }()
@@ -95,6 +95,7 @@ extension HomeViewYGOController: UITableViewDelegate, UITableViewDataSource {
         //will back when we get data fetching done
         let cell = tableView.dequeueReusableCell(withIdentifier: DBYGOListCell.cellIdentifier, for: indexPath) as! DBYGOListCell
         cell.cardName.text = ygodb[indexPath.row].name
+        //cell.backgroundColor = .systemBlue
         return cell
     }
     
