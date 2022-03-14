@@ -15,15 +15,27 @@ class DBYGOListCell: UITableViewCell {
     @IBOutlet weak var typeCard: UILabel!
     @IBOutlet weak var cardName: UILabel!
     
+    static let cellIdentifier = "ReusableYGOCell"
+    static let nibName = "DBYGOListCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        SetDisplaycell()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func SetDisplaycell(){
+        //cardName.textAlignment = .left
+        cardName.numberOfLines = 0
+        cardName.adjustsFontSizeToFitWidth = true
+        cardName.minimumScaleFactor = 0.5
+        
     }
     
 }

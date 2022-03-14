@@ -27,7 +27,7 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
     //create tableview programatically
     private let tableView: UITableView = {
         let table = UITableView()
-        table.register(UINib(nibName: "DBYGOListCell", bundle: nil), forCellReuseIdentifier: "ReusableYGOCell")
+        table.register(UINib(nibName: "DBYGOListCell", bundle: nil), forCellReuseIdentifier: DBYGOListCell.cellIdentifier)
         table.isHidden = true
         return table
     }()
@@ -56,6 +56,7 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+        //for error
         label.center = view.center
         label.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
         label.center = view.center
@@ -92,7 +93,7 @@ extension HomeViewYGOController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //return UITableViewCell()
         //will back when we get data fetching done
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableYGOCell", for: indexPath) as! DBYGOListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: DBYGOListCell.cellIdentifier, for: indexPath) as! DBYGOListCell
         cell.cardName.text = ygodb[indexPath.row].name
         return cell
     }
