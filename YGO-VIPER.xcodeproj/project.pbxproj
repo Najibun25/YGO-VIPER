@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15F42C2C5BA056FD8C755C41 /* libPods-YGO-VIPER.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D2D833CCA6C2DF6F98B7BF /* libPods-YGO-VIPER.a */; };
 		4F1E868727DA76B400085931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E868627DA76B400085931 /* AppDelegate.swift */; };
 		4F1E868927DA76B400085931 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E868827DA76B400085931 /* SceneDelegate.swift */; };
 		4F1E869027DA76B500085931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E868F27DA76B500085931 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1823615280F09F7A592FDAF4 /* Pods-YGO-VIPER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YGO-VIPER.release.xcconfig"; path = "Target Support Files/Pods-YGO-VIPER/Pods-YGO-VIPER.release.xcconfig"; sourceTree = "<group>"; };
 		4F1E868327DA76B400085931 /* YGO-VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YGO-VIPER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1E868627DA76B400085931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F1E868827DA76B400085931 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		4F1E86A227DA77B200085931 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		4FAE1C7B27DEFCF600B94E4A /* DBYGOListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBYGOListCell.swift; sourceTree = "<group>"; };
 		4FAE1C7C27DEFCF600B94E4A /* DBYGOListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBYGOListCell.xib; sourceTree = "<group>"; };
+		90D2D833CCA6C2DF6F98B7BF /* libPods-YGO-VIPER.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YGO-VIPER.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B6D06221749375AE00DB1D3 /* Pods-YGO-VIPER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YGO-VIPER.debug.xcconfig"; path = "Target Support Files/Pods-YGO-VIPER/Pods-YGO-VIPER.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +45,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15F42C2C5BA056FD8C755C41 /* libPods-YGO-VIPER.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1804F35D9B1F66EF252B1B67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B6D06221749375AE00DB1D3 /* Pods-YGO-VIPER.debug.xcconfig */,
+				1823615280F09F7A592FDAF4 /* Pods-YGO-VIPER.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4F1E867A27DA76B400085931 = {
 			isa = PBXGroup;
 			children = (
 				4F1E868527DA76B400085931 /* YGO-VIPER */,
 				4F1E868427DA76B400085931 /* Products */,
+				1804F35D9B1F66EF252B1B67 /* Pods */,
+				59BA84996EF8E7998B10BEEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +115,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		59BA84996EF8E7998B10BEEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90D2D833CCA6C2DF6F98B7BF /* libPods-YGO-VIPER.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,6 +130,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F1E869727DA76B500085931 /* Build configuration list for PBXNativeTarget "YGO-VIPER" */;
 			buildPhases = (
+				BADB67A9D68880DADCF64AD1 /* [CP] Check Pods Manifest.lock */,
 				4F1E867F27DA76B400085931 /* Sources */,
 				4F1E868027DA76B400085931 /* Frameworks */,
 				4F1E868127DA76B400085931 /* Resources */,
@@ -163,6 +189,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BADB67A9D68880DADCF64AD1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YGO-VIPER-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4F1E867F27DA76B400085931 /* Sources */ = {
@@ -312,6 +363,7 @@
 		};
 		4F1E869827DA76B500085931 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B6D06221749375AE00DB1D3 /* Pods-YGO-VIPER.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -339,6 +391,7 @@
 		};
 		4F1E869927DA76B500085931 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1823615280F09F7A592FDAF4 /* Pods-YGO-VIPER.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

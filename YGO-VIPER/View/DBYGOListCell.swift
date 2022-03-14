@@ -6,9 +6,19 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DBYGoListCellViewModel {
-    
+//    let title: String
+//    let subtitle: String
+//    let imageURL: URL?
+//    //biar galk download2 terus
+//    var imageData: Data? = nil
+//
+//    init(title: String, subtitle: String, imageURL: URL?) {
+//        self.title = title
+//        self.subtitle = subtitle
+//        self.imageURL = imageURL
 }
 
 
@@ -40,6 +50,16 @@ class DBYGOListCell: UITableViewCell {
         cardName.numberOfLines = 0
         cardName.adjustsFontSizeToFitWidth = true
         cardName.sizeToFit()
+    }
+    
+    
+    func configureDisplay(with viewModel: Data){
+        cardName.text = viewModel.name
+        
+        //image
+        if let imageURL = viewModel.card_images.first?.image_url_small {
+            cardImagePreview.kf.setImage(with: URL(string: imageURL))
+        }
     }
     
 }

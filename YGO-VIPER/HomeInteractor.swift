@@ -50,7 +50,7 @@ class HomeInteractorYGO: HomeInteractorProtocol {
                 let entities = try JSONDecoder().decode(YGOdb.self, from: data)
                 
                 self?.presenter?.interactorDidFetchYGOdb(with: .success(entities.data))
-                print(entities)
+                //print(entities)
                 //print("data keambil = \(entities.count)")
                 //print("Data keambil: \(entities.data)")
                 print("di fetch")

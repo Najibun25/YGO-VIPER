@@ -1,0 +1,6 @@
+module Pods_YGO_VIPER {
+  umbrella header "Pods-YGO-VIPER-umbrella.h"
+
+  export *
+  module * { export * }
+}
