@@ -32,7 +32,7 @@ class HomeInteractorYGO: HomeInteractorProtocol {
     var presenter: HomePresenterProtocol?
     
     struct ConstantAPI {
-        static let initialURL = URL(string: "https://jsonplaceholder.typicode.com/users")
+        static let initialURL = URL(string: "https://db.ygoprodeck.com/api/v7/cardinfo.php?&startdate=01/01/2022&enddate=02/28/2022&dateregion=tcg_date")
     }
     
     
@@ -47,9 +47,9 @@ class HomeInteractorYGO: HomeInteractorProtocol {
             }
             do {
                 //something wrong ion here
-                let entities = try JSONDecoder().decode([YGOdb].self, from: data)
-                print("\(entities.count)")
-                self?.presenter?.interactorDidFetchYGOdb(with: .success(entities))
+                let entities = try JSONDecoder().decode(YGOdb.self, from: data)
+                
+                self?.presenter?.interactorDidFetchYGOdb(with: .success(entities.data))
                 print(entities)
                 //print("data keambil = \(entities.count)")
                 //print("Data keambil: \(entities.data)")

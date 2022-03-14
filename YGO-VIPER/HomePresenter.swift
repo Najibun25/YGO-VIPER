@@ -23,7 +23,7 @@ protocol HomePresenterProtocol {
     var interactor: HomeInteractorProtocol? {get set}
     var view: HomeViewProtocol? {get set}
 
-    func interactorDidFetchYGOdb(with result: Result<[YGOdb], Error>)
+    func interactorDidFetchYGOdb(with result: Result< [Data], Error>)
 
 }
 
@@ -40,7 +40,7 @@ class HomePresenterYGO: HomePresenterProtocol{
     
     var view: HomeViewProtocol?
     
-    func interactorDidFetchYGOdb(with result: Result<[YGOdb], Error>) {
+    func interactorDidFetchYGOdb(with result: Result< [Data], Error>) {
         switch result {
         case .success(let ygodb):
             view?.update(with: ygodb)

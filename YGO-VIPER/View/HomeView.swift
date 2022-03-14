@@ -16,7 +16,7 @@ import UIKit
 protocol HomeViewProtocol {
     var presenter: HomePresenterProtocol? {get set}
     
-    func update(with ygodb: [YGOdb])
+    func update(with ygodb: [Data])
     func update(with error: String)
     
 }
@@ -40,7 +40,7 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         return label
     }()
     
-    var ygodb: [YGOdb] = []
+    var ygodb: [Data] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +62,7 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         label.center = view.center
     }
     
-    func update(with ygodb: [YGOdb]) {
+    func update(with ygodb: [Data]) {
         // dah diambil ama intreaktor, dan kalau presenter dah nge okein pake switch update di view
         //print("got user")
         DispatchQueue.main.async {
@@ -91,12 +91,12 @@ extension HomeViewYGOController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //return UITableViewCell()
+        return UITableViewCell()
         //will back when we get data fetching done
-        let cell = tableView.dequeueReusableCell(withIdentifier: DBYGOListCell.cellIdentifier, for: indexPath) as! DBYGOListCell
-        cell.cardName.text = ygodb[indexPath.row].name
-        //cell.backgroundColor = .systemBlue
-        return cell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: DBYGOListCell.cellIdentifier, for: indexPath) as! DBYGOListCell
+//        cell.cardName.text = ygodb[indexPath.row].name
+//        //cell.backgroundColor = .systemBlue
+//        return cell
     }
     
     

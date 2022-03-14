@@ -12,8 +12,6 @@ class DBYGoListCellViewModel {
 }
 
 
-
-
 class DBYGOListCell: UITableViewCell {
     
     @IBOutlet weak var levelIconPreview: UIImageView!
