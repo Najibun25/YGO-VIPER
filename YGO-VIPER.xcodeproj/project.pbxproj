@@ -66,7 +66,7 @@
 		4F1E868527DA76B400085931 /* YGO-VIPER */ = {
 			isa = PBXGroup;
 			children = (
-				4F1E869A27DA775800085931 /* HomeView.swift */,
+				4FBD9A4E27DF31B600714C9B /* View */,
 				4F1E869C27DA776600085931 /* HomeInteractor.swift */,
 				4F1E869E27DA777800085931 /* HomePresenter.swift */,
 				4F1E86A027DA779700085931 /* Entity.swift */,
@@ -77,8 +77,6 @@
 				4F1E868F27DA76B500085931 /* Assets.xcassets */,
 				4F1E869127DA76B500085931 /* LaunchScreen.storyboard */,
 				4F1E869427DA76B500085931 /* Info.plist */,
-				4FAE1C7B27DEFCF600B94E4A /* DBYGOListCell.swift */,
-				4FAE1C7C27DEFCF600B94E4A /* DBYGOListCell.xib */,
 			);
 			path = "YGO-VIPER";
 			sourceTree = "<group>";
@@ -88,6 +86,16 @@
 			children = (
 			);
 			path = VIPER;
+			sourceTree = "<group>";
+		};
+		4FBD9A4E27DF31B600714C9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F1E869A27DA775800085931 /* HomeView.swift */,
+				4FAE1C7B27DEFCF600B94E4A /* DBYGOListCell.swift */,
+				4FAE1C7C27DEFCF600B94E4A /* DBYGOListCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

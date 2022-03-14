@@ -8,7 +8,13 @@
 import UIKit
 
 class DBYGOListCell: UITableViewCell {
-
+    
+    @IBOutlet weak var levelIconPreview: UIImageView!
+    @IBOutlet weak var cardImagePreview: UIImageView!
+    @IBOutlet weak var levelOrStar: UILabel!
+    @IBOutlet weak var typeCard: UILabel!
+    @IBOutlet weak var cardName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
