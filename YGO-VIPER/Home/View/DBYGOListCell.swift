@@ -58,16 +58,16 @@ class DBYGOListCell: UITableViewCell {
         cardName.text = viewModel.name
         cardName.font = .systemFont(ofSize: 25, weight: .medium)
         typeCard.text = viewModel.type
-        typeCard.font = .systemFont(ofSize: 10, weight: .medium)
+        typeCard.font = .systemFont(ofSize: 18, weight: .medium)
         levelOrStar.text = "Level/Rank : \(viewModel.level ?? 0)"
-        levelOrStar.font = .systemFont(ofSize: 10, weight: .medium)
+        levelOrStar.font = .systemFont(ofSize: 18, weight: .medium)
         //add something
         //image kanan
         if let imageURL = viewModel.card_images.first?.image_url_small {
             cardImagePreview.kf.setImage(with: URL(string: imageURL))
         }
         
-        levelIconPreview.image = UIImage(systemName: "black_star")
+        //levelIconPreview.image = UIImage(systemName: "black_star")
         
         var imagetoLevel: String {
         switch viewModel.type {

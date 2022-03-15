@@ -18,6 +18,13 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     var presenter: DetailYGOPresenterProtocol?
 
     @IBOutlet weak var detailImage: UIImageView!
+    @IBOutlet weak var cardName: UILabel!
+    @IBOutlet weak var attributeCard: UILabel!
+    @IBOutlet weak var levelOrRank: UILabel!
+    @IBOutlet weak var typeRace: UILabel!
+    @IBOutlet weak var cardDesc: UILabel!
+    @IBOutlet weak var cardArctype: UILabel!
+    @IBOutlet weak var atkAndDeff: UILabel!
     
     //presenter
     var viewModel: Data?
@@ -41,6 +48,28 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         if let detailImageURL = viewModel.card_images.first?.image_url {
             detailImage.kf.setImage(with: URL(string: detailImageURL))
         }
+        cardName.text = viewModel.name
+        cardName.font = .systemFont(ofSize: 25, weight: .heavy)
+        cardName.numberOfLines = 0
+        
+        attributeCard.text = "Attribute: \(viewModel.attribute ?? "-")"
+        
+        levelOrRank.text = "Level/Rank : \(viewModel.level ?? 0)"
+        
+        typeRace.text = "[\(viewModel.race ?? "")/\(viewModel.type)]"
+        typeRace.font = .systemFont(ofSize: 18, weight: .medium)
+        
+        cardDesc.text = viewModel.desc
+        cardDesc.numberOfLines = 0
+        cardDesc.font = .systemFont(ofSize: 10, weight: .medium)
+        
+        atkAndDeff.text = "ATK/\(viewModel.atk ?? 0) DEF/\(viewModel.def ?? 0)"
+        
+        cardArctype.text = "Archtype : \(viewModel.archetype ?? "")"
+        
+        
+        
+        
     }
     
     

@@ -29,7 +29,9 @@ struct Data: Codable {
     let race: String?
     let level: Int?
     let atk: Int?
-    let deff: Int?
+    let def: Int?
+    let attribute: String?
+    let archetype: String?
 //    let level: String
 //    let race: String
 //    let attribute: String
