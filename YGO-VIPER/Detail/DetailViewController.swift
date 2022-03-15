@@ -14,7 +14,7 @@ protocol DetailViewProtocol {
     
 }
 
-class DetailViewController: UIViewController, DetailViewProtocol {
+class DetailViewController: UIViewController, DetailViewProtocol, UIScrollViewDelegate {
     var presenter: DetailYGOPresenterProtocol?
 
     @IBOutlet weak var viewCard: UIView!
