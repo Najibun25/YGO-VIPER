@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 // Responsible for user interface
 // as viewController
@@ -38,6 +39,7 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         label.textAlignment = .center
         label.isHidden = true
         return label
+        //addHeader()
     }()
     
     var ygodb: [Data] = []
@@ -50,6 +52,8 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         tableView.delegate = self
         tableView.dataSource = self
         //print("jumalh keambil = \(ygodb.count)")
+        //self.navigationController?.title = "Halo"
+        
     }
     
     
@@ -60,7 +64,15 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         label.center = view.center
         label.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
         label.center = view.center
+        //title = "Ha ha"
+        
     }
+    
+//    func addHeader(){
+//        let headerview = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 50))
+//        self.tableView.tableHeaderView = headerview
+//    }
+    
     
     func update(with ygodb: [Data]) {
         // dah diambil ama intreaktor, dan kalau presenter dah nge okein pake switch update di view
@@ -102,6 +114,9 @@ extension HomeViewYGOController: UITableViewDelegate, UITableViewDataSource {
         presenter?.didSelectedz(with: ygodb[indexPath.row])
     }
     
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Header"
+//    }
     
 }
 

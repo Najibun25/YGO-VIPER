@@ -32,7 +32,9 @@ class HomeInteractorYGO: HomeInteractorProtocol {
     var presenter: HomePresenterProtocol?
     
     struct ConstantAPI {
-        static let initialURL = URL(string: "https://db.ygoprodeck.com/api/v7/cardinfo.php?&startdate=01/01/2022&enddate=02/28/2022&dateregion=tcg_date")
+        static let initialURL = URL(string: "https://db.ygoprodeck.com/api/v7/cardinfo.php")
+        
+        
     }
     
     
