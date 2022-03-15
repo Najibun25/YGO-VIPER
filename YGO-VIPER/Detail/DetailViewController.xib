@@ -18,6 +18,7 @@
                 <outlet property="levelOrRank" destination="Z0f-i2-dLt" id="eNC-tQ-TnO"/>
                 <outlet property="typeRace" destination="YPa-dm-Zmc" id="4y8-2p-Xu3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewCard" destination="mre-RA-4I3" id="iSP-Kf-phV"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

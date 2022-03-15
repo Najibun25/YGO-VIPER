@@ -17,6 +17,7 @@ protocol DetailViewProtocol {
 class DetailViewController: UIViewController, DetailViewProtocol {
     var presenter: DetailYGOPresenterProtocol?
 
+    @IBOutlet weak var viewCard: UIView!
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var cardName: UILabel!
     @IBOutlet weak var attributeCard: UILabel!
@@ -49,24 +50,26 @@ class DetailViewController: UIViewController, DetailViewProtocol {
             detailImage.kf.setImage(with: URL(string: detailImageURL))
         }
         cardName.text = viewModel.name
-        cardName.font = .systemFont(ofSize: 25, weight: .heavy)
+        cardName.font = .systemFont(ofSize: 25, weight: .bold)
         cardName.numberOfLines = 0
         
         attributeCard.text = "Attribute: \(viewModel.attribute ?? "-")"
-        
+
         levelOrRank.text = "Level/Rank : \(viewModel.level ?? 0)"
-        
+//
         typeRace.text = "[\(viewModel.race ?? "")/\(viewModel.type)]"
-        typeRace.font = .systemFont(ofSize: 18, weight: .medium)
-        
+        typeRace.font = .systemFont(ofSize: 16, weight: .medium)
+//
         cardDesc.text = viewModel.desc
         cardDesc.numberOfLines = 0
-        cardDesc.font = .systemFont(ofSize: 10, weight: .medium)
-        
+        cardDesc.font = .systemFont(ofSize: 11, weight: .medium)
+//
         atkAndDeff.text = "ATK/\(viewModel.atk ?? 0) DEF/\(viewModel.def ?? 0)"
-        
+//
         cardArctype.text = "Archtype : \(viewModel.archetype ?? "")"
-        
+        cardArctype.font = .systemFont(ofSize: 13, weight: .regular)
+//
+//        viewCard.layer.cornerRadius = 10
         
         
         
