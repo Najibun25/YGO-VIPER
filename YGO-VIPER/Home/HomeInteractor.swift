@@ -34,6 +34,8 @@ class HomeInteractorYGO: HomeInteractorProtocol {
     struct ConstantAPI {
         static let initialURL = URL(string: "https://db.ygoprodeck.com/api/v7/cardinfo.php")
         
+        static let searchURL = "https://db.ygoprodeck.com/api/v7/cardinfo.php?fname="
+        
         
     }
     
@@ -65,6 +67,46 @@ class HomeInteractorYGO: HomeInteractorProtocol {
         task.resume()
         ///hoho ha ha ha
     }
+    
+    
+    //
+    //not done yet
+    func searchYGOdb(with query: String) {
+        //biar kalo orang ngasih spasi spasi dianggep empty
+        guard !query.trimmingCharacters(in: .whitespaces).isEmpty else{
+            return
+        }
+        
+        let urlString = ConstantAPI.searchURL + query
+        guard var urlStringCombine = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return
+        }
+        
+        guard let  url = URL(string: urlStringCombine) else { return }
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+            guard let data = data, error == nil else {
+                //passsing error
+                self?.presenter?.interactorDidFetchYGOdb(with: .failure(FetchError.failed))
+                return
+            }
+            do {
+                //something wrong ion here
+                let entities = try JSONDecoder().decode(YGOdb.self, from: data)
+                
+                self?.presenter?.interactorDidFetchYGOdb(with: .success(entities.data))
+                //print(entities)
+                //print("data keambil = \(entities.count)")
+                //print("Data keambil: \(entities.data)")
+                print("di fetch")
+            }
+            catch {
+                self?.presenter?.interactorDidFetchYGOdb(with: .failure(error))
+                print("masuk catch error")
+            }
+        }
+        task.resume()
+        ///hoho ha ha ha
+    }
+    
     
     
     
