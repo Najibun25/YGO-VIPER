@@ -164,6 +164,7 @@
 			buildConfigurationList = 4F1E869727DA76B500085931 /* Build configuration list for PBXNativeTarget "YGO-VIPER" */;
 			buildPhases = (
 				BADB67A9D68880DADCF64AD1 /* [CP] Check Pods Manifest.lock */,
+				4F3366E727E1BEFC005D897A /* Swiftlin */,
 				4F1E867F27DA76B400085931 /* Sources */,
 				4F1E868027DA76B400085931 /* Frameworks */,
 				4F1E868127DA76B400085931 /* Resources */,
@@ -225,6 +226,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4F3366E727E1BEFC005D897A /* Swiftlin */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlin;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		BADB67A9D68880DADCF64AD1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
