@@ -10,8 +10,6 @@ import Kingfisher
 
 protocol DetailViewProtocol {
     var presenter: DetailYGOPresenterProtocol? {get set}
-    
-    
 }
 
 class DetailViewController: UIViewController, DetailViewProtocol, UIScrollViewDelegate {
@@ -26,16 +24,12 @@ class DetailViewController: UIViewController, DetailViewProtocol, UIScrollViewDe
     @IBOutlet weak var cardDesc: UILabel!
     @IBOutlet weak var cardArctype: UILabel!
     @IBOutlet weak var atkAndDeff: UILabel!
-    
-    //presenter
+    // presenter
     var viewModel: Data?
-    
-    //bikin image
-    //belum dibuat viper style
-    
+    // bikin image
+    // belum dibuat viper style
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         guard let viewModel = viewModel else {
             return
         }
@@ -44,15 +38,13 @@ class DetailViewController: UIViewController, DetailViewProtocol, UIScrollViewDe
 
         // Do any additional setup after loading the view.
     }
-    
-    func setUpDetailImage(with viewModel: Data){
+    func setUpDetailImage(with viewModel: Data) {
         if let detailImageURL = viewModel.card_images.first?.image_url {
             detailImage.kf.setImage(with: URL(string: detailImageURL))
         }
         cardName.text = viewModel.name
         cardName.font = .systemFont(ofSize: 25, weight: .bold)
         cardName.numberOfLines = 0
-        
         attributeCard.text = "Attribute: \(viewModel.attribute ?? "-")"
 
         levelOrRank.text = "Level/Rank : \(viewModel.level ?? 0)"
@@ -70,13 +62,7 @@ class DetailViewController: UIViewController, DetailViewProtocol, UIScrollViewDe
         cardArctype.font = .systemFont(ofSize: 13, weight: .regular)
 //
 //        viewCard.layer.cornerRadius = 10
-        
-        
-        
     }
-    
-    
-
     /*
     // MARK: - Navigation
 

@@ -8,16 +8,15 @@
 import Foundation
 import UIKit
 
-//Object
+// Object
 // EntryPoint for our modul.
-
 
 class HomeRouterYGO: HomeRouterProtocol {
     func navigatetoDetail(from view: HomeViewProtocol, viewModel: Data) {
         let destinationVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
         destinationVC.viewModel = viewModel
-        //destinationVC.presenter?.viewModel = viewModel
-        if let view = view as? UIViewController{
+        // destinationVC.presenter?.viewModel = viewModel
+        if let view = view as? UIViewController {
             view.navigationController?.pushViewController(destinationVC, animated: true)
         }
     }
@@ -26,8 +25,7 @@ class HomeRouterYGO: HomeRouterProtocol {
     
     static func start() -> HomeRouterProtocol {
         let router = HomeRouterYGO()
-        
-        //assign VIP
+        // assign VIP
         var view: HomeViewProtocol = HomeViewYGOController()
         var presenter: HomePresenterProtocol = HomePresenterYGO()
         var interactor: HomeInteractorProtocol = HomeInteractorYGO()
@@ -39,14 +37,7 @@ class HomeRouterYGO: HomeRouterProtocol {
         presenter.router = router
         presenter.view = view
         presenter.interactor = interactor
-        
         router.entry = view as? EntryPoint
-        
-        
         return router
     }
-    
-    
 }
-
-

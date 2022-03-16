@@ -13,20 +13,18 @@ import UIKit
 // as viewController
 // referrence to presenter
 
-
-
 class HomeViewYGOController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
     
-    //create tableview programatically
+    // create tableview programatically
     private let tableView: UITableView = {
         let table = UITableView()
-        table.register(UINib(nibName: DBYGOListCell.nibName, bundle: nil), forCellReuseIdentifier: DBYGOListCell.cellIdentifier)
+        table.register(UINib(nibName: DBYGOListCell.nibName, bundle: nil),
+                       forCellReuseIdentifier: DBYGOListCell.cellIdentifier)
         table.isHidden = true
         return table
     }()
-    
-    //bikin kalo misal salah kelaur label
+    // bikin kalo misal salah kelaur label
     private let label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -44,48 +42,35 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        //print("jumalh keambil = \(ygodb.count)")
-        //self.navigationController?.title = "Halo"
-        
     }
-    
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
-        //for error
+        // for error
         label.center = view.center
         label.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
         label.center = view.center
-        //title = "Ha ha"
-        
     }
-    
 //    func addHeader(){
 //        let headerview = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 50))
 //        self.tableView.tableHeaderView = headerview
 //    }
-    
-    
     func update(with ygodb: [Data]) {
         // dah diambil ama intreaktor, dan kalau presenter dah nge okein pake switch update di view
-        //print("got user")
+        // print("got user")
         DispatchQueue.main.async {
             self.ygodb = ygodb
             self.tableView.reloadData()
             self.tableView.isHidden = false
-            //print("jumalh keambil = \(ygodb.count)")
         }
     }
-    
-    func update(with error: String){
+    func update(with error: String) {
         print("got user")
         DispatchQueue.main.async {
             self.ygodb = []
             self.label.text = error
             self.tableView.isHidden = true
             self.label.isHidden = false
-            //print("jumalh keambil = \(ygodb.count)")
         }
     }
 }
@@ -94,28 +79,19 @@ extension HomeViewYGOController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ygodb.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //return UITableViewCell()
-        //will back when we get data fetching done
+        // safe to force cast when you need is force cast in tableview??
         // swiftlint:disable force_cast
-        let cell = tableView.dequeueReusableCell(withIdentifier: DBYGOListCell.cellIdentifier, for: indexPath) as! DBYGOListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: DBYGOListCell.cellIdentifier, for: indexPath)
+            as! DBYGOListCell
         cell.configureDisplay(with: ygodb[indexPath.row])
         return cell
         // swiftlint:enable force_cast
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.didSelectedz(with: ygodb[indexPath.row])
     }
-    
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //        return "Header"
 //    }
-    
 }
-
-
-
-
-
