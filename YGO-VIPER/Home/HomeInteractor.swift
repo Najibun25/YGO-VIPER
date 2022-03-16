@@ -15,28 +15,16 @@ import Foundation
 // all api yugi = https://db.ygoprodeck.com/api/v7/cardinfo.php 11 rb data
 // card yugi yang keluar di tahun ini https://db.ygoprodeck.com/api/v7/cardinfo.php?&startdate=01/01/2022&enddate=02/28/2022&dateregion=tcg_date <--- pakai uyang ini
 // api search = https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=tri-brigade
-//try https://jsonplaceholder.typicode.com/users
-//try with news api https://newsapi.org/v2/top-headlines?country=us&apiKey=c75d59fc8e1149b8923cf50b19d49a63
 //backbone
 
-protocol HomeInteractorProtocol {
-    var presenter: HomePresenterProtocol? { get set }
-    
-    //interactor hanya inform saat ready
-    func getYGOdb()
-    //need to tell presenter
-    
-}
+
 
 class HomeInteractorYGO: HomeInteractorProtocol {
     var presenter: HomePresenterProtocol?
     
     struct ConstantAPI {
         static let initialURL = URL(string: "https://db.ygoprodeck.com/api/v7/cardinfo.php")
-        
         static let searchURL = "https://db.ygoprodeck.com/api/v7/cardinfo.php?fname="
-        
-        
     }
     
     
@@ -50,13 +38,9 @@ class HomeInteractorYGO: HomeInteractorProtocol {
                 return
             }
             do {
-                //something wrong ion here
                 let entities = try JSONDecoder().decode(YGOdb.self, from: data)
                 
                 self?.presenter?.interactorDidFetchYGOdb(with: .success(entities.data))
-                //print(entities)
-                //print("data keambil = \(entities.count)")
-                //print("Data keambil: \(entities.data)")
                 print("di fetch")
             }
             catch {
@@ -65,10 +49,7 @@ class HomeInteractorYGO: HomeInteractorProtocol {
             }
         }
         task.resume()
-        ///hoho ha ha ha
     }
-    
-    
     //
     //not done yet
     func searchYGOdb(with query: String) {
@@ -89,13 +70,9 @@ class HomeInteractorYGO: HomeInteractorProtocol {
                 return
             }
             do {
-                //something wrong ion here
                 let entities = try JSONDecoder().decode(YGOdb.self, from: data)
                 
                 self?.presenter?.interactorDidFetchYGOdb(with: .success(entities.data))
-                //print(entities)
-                //print("data keambil = \(entities.count)")
-                //print("Data keambil: \(entities.data)")
                 print("di fetch")
             }
             catch {
@@ -104,11 +81,6 @@ class HomeInteractorYGO: HomeInteractorProtocol {
             }
         }
         task.resume()
-        ///hoho ha ha ha
     }
-    
-    
-    
-    
 }
 

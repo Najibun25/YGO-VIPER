@@ -18,26 +18,11 @@ enum FetchError: Error {
 }
 
 
-protocol HomePresenterProtocol {
-    var router: HomeRouterProtocol?  { get set }
-    var interactor: HomeInteractorProtocol? {get set}
-    var view: HomeViewProtocol? {get set}
-
-    func interactorDidFetchYGOdb(with result: Result< [Data], Error>)
-    
-    func didSelectedz(with viewModel: Data)
-    
-    //func getQuery()
-
-}
-
-
 class HomePresenterYGO: HomePresenterProtocol{
     var router: HomeRouterProtocol?
     
     var interactor: HomeInteractorProtocol? {
         didSet {
-            //ngambil gey ygo dari interactor
             interactor?.getYGOdb()
         }
     }

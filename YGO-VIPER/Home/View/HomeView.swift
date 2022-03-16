@@ -14,13 +14,6 @@ import UIKit
 // referrence to presenter
 
 
-protocol HomeViewProtocol {
-    var presenter: HomePresenterProtocol? {get set}
-    
-    func update(with ygodb: [Data])
-    func update(with error: String)
-    
-}
 
 class HomeViewYGOController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?

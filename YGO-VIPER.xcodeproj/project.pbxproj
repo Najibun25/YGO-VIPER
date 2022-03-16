@@ -17,6 +17,7 @@
 		4F1E869F27DA777800085931 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E869E27DA777800085931 /* HomePresenter.swift */; };
 		4F1E86A127DA779700085931 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E86A027DA779700085931 /* Entity.swift */; };
 		4F1E86A327DA77B200085931 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E86A227DA77B200085931 /* HomeRouter.swift */; };
+		4F3366E427E19591005D897A /* ProtocolYGO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3366E327E19591005D897A /* ProtocolYGO.swift */; };
 		4FAE1C7D27DEFCF600B94E4A /* DBYGOListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAE1C7B27DEFCF600B94E4A /* DBYGOListCell.swift */; };
 		4FAE1C7E27DEFCF600B94E4A /* DBYGOListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FAE1C7C27DEFCF600B94E4A /* DBYGOListCell.xib */; };
 		4FBD9A5327DF828200714C9B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD9A5127DF828200714C9B /* DetailViewController.swift */; };
@@ -39,6 +40,7 @@
 		4F1E869E27DA777800085931 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		4F1E86A027DA779700085931 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		4F1E86A227DA77B200085931 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		4F3366E327E19591005D897A /* ProtocolYGO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolYGO.swift; sourceTree = "<group>"; };
 		4FAE1C7B27DEFCF600B94E4A /* DBYGOListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBYGOListCell.swift; sourceTree = "<group>"; };
 		4FAE1C7C27DEFCF600B94E4A /* DBYGOListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBYGOListCell.xib; sourceTree = "<group>"; };
 		4FBD9A5127DF828200714C9B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				4F1E86A427DA783400085931 /* VIPER */,
 				4F1E868827DA76B400085931 /* SceneDelegate.swift */,
 				4F1E868627DA76B400085931 /* AppDelegate.swift */,
+				4F3366E327E19591005D897A /* ProtocolYGO.swift */,
 				4F1E868F27DA76B500085931 /* Assets.xcassets */,
 				4F1E869127DA76B500085931 /* LaunchScreen.storyboard */,
 				4F1E869427DA76B500085931 /* Info.plist */,
@@ -259,6 +262,7 @@
 				4F1E868727DA76B400085931 /* AppDelegate.swift in Sources */,
 				4F1E869F27DA777800085931 /* HomePresenter.swift in Sources */,
 				4F1E86A327DA77B200085931 /* HomeRouter.swift in Sources */,
+				4F3366E427E19591005D897A /* ProtocolYGO.swift in Sources */,
 				4F1E869D27DA776600085931 /* HomeInteractor.swift in Sources */,
 				4FBD9A5A27DF866500714C9B /* DetailRouter.swift in Sources */,
 				4F1E868927DA76B400085931 /* SceneDelegate.swift in Sources */,
