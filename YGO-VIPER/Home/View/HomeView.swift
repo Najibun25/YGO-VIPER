@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import SwiftUI
+//import SwiftUI
 
 // Responsible for user interface
 // as viewController

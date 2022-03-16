@@ -14,11 +14,6 @@ import Foundation
 
 struct YGOdb: Codable {
     let data: [Data]
-    //let dibawah kalaau mau pake yang https://jsonplaceholder.typicode.com/users
-    //let name: String
-    //dot name
-    // kalau pake yang news api
-    //let articles: [Article]
 }
 
 struct Data: Codable {
@@ -43,3 +38,5 @@ struct CardImages: Codable {
     let image_url: String
     let image_url_small: String
 }
+
+

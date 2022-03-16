@@ -15,7 +15,6 @@ typealias EntryPoint = HomeViewYGOController
 
 protocol HomeRouterProtocol {
     //tell delegetae untuk kasih entry point di apps
-    //dont forget to ? in entrypoint, bikin error 1 malam
     var entry: EntryPoint? { get }
     
     static func start() -> HomeRouterProtocol

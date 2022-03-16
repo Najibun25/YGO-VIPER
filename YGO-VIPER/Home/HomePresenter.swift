@@ -26,6 +26,8 @@ protocol HomePresenterProtocol {
     func interactorDidFetchYGOdb(with result: Result< [Data], Error>)
     
     func didSelectedz(with viewModel: Data)
+    
+    //func getQuery()
 
 }
 
