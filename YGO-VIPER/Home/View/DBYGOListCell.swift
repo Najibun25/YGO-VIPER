@@ -22,7 +22,7 @@ class DBYGOListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        SetDisplaycell()
+        setDisplayCell()
     }    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,7 +31,7 @@ class DBYGOListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func SetDisplaycell(){
+    func setDisplayCell(){
         //cardName.textAlignment = .left
         cardName.numberOfLines = 0
         cardName.adjustsFontSizeToFitWidth = true

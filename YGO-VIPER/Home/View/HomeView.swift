@@ -98,9 +98,11 @@ extension HomeViewYGOController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //return UITableViewCell()
         //will back when we get data fetching done
+        // swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: DBYGOListCell.cellIdentifier, for: indexPath) as! DBYGOListCell
         cell.configureDisplay(with: ygodb[indexPath.row])
         return cell
+        // swiftlint:enable force_cast
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
