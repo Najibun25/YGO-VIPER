@@ -39,6 +39,7 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        setNavigationBar()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -48,10 +49,22 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         label.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
         label.center = view.center
     }
-//    func addHeader(){
-//        let headerview = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 50))
-//        self.tableView.tableHeaderView = headerview
-//    }
+    func setNavigationBar() {
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
+        view.addSubview(navBar)
+        self.navigationItem.title = "YGO MIni DB"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        //_ = UINavigationItem(title: "YGO Mini DB")
+        
+//        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 44))
+//        view.addSubview(navBar)
+//
+//        let navItem = UINavigationItem(title: "SomeTitle")
+//        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(selectorName:))
+//        navItem.rightBarButtonItem = doneItem
+//
+//        navBar.setItems([navItem], animated: false)
+    }
     func update(with ygodb: [Data]) {
         // dah diambil ama intreaktor, dan kalau presenter dah nge okein pake switch update di view
         // print("got user")
