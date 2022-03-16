@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 // import SwiftUI
 
 // Responsible for user interface
@@ -31,6 +32,8 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         return label
         // addHeader()
     }()
+    //
+    let searchVC = UISearchController(searchResultsController: nil)
     var ygodb: [Data] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +44,7 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         tableView.dataSource = self
         setNavigationBar()
     }
+    //
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
@@ -49,22 +53,21 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         label.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
         label.center = view.center
     }
+    //
     func setNavigationBar() {
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 30))
         view.addSubview(navBar)
         self.navigationItem.title = "YGO MIni DB"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        //_ = UINavigationItem(title: "YGO Mini DB")
-        
-//        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 44))
-//        view.addSubview(navBar)
-//
-//        let navItem = UINavigationItem(title: "SomeTitle")
-//        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(selectorName:))
-//        navItem.rightBarButtonItem = doneItem
-//
-//        navBar.setItems([navItem], animated: false)
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 14/255.0,
+                                                                           green: 24/255.0,
+                                                                           blue: 95/255.0,
+                                                                           alpha: 1.0)
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.hidesBarsOnSwipe = true
+        createSearchBar()
     }
+    //
     func update(with ygodb: [Data]) {
         // dah diambil ama intreaktor, dan kalau presenter dah nge okein pake switch update di view
         // print("got user")
@@ -74,6 +77,7 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
             self.tableView.isHidden = false
         }
     }
+    //
     func update(with error: String) {
         print("got user")
         DispatchQueue.main.async {
@@ -82,6 +86,10 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
             self.tableView.isHidden = true
             self.label.isHidden = false
         }
+    }
+    func createSearchBar() {
+        navigationItem.searchController = searchVC
+        searchVC.searchBar.delegate = self
     }
 }
 
@@ -104,4 +112,13 @@ extension HomeViewYGOController: UITableViewDelegate, UITableViewDataSource {
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //        return "Header"
 //    }
+}
+
+extension HomeViewYGOController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text, !text.isEmpty else {
+            return
+        }
+        print(text)
+    }
 }

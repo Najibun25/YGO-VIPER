@@ -37,6 +37,7 @@ class DetailViewController: UIViewController, DetailViewProtocol, UIScrollViewDe
         setUpDetailImage(with: viewModel)
 
         // Do any additional setup after loading the view.
+        self.navigationController?.isNavigationBarHidden = false
     }
     func setUpDetailImage(with viewModel: Data) {
         if let detailImageURL = viewModel.card_images.first?.image_url {
