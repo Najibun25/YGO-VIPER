@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-//import SwiftUI
+// import SwiftUI
 
 // Responsible for user interface
 // as viewController
@@ -15,7 +15,6 @@ import UIKit
 
 class HomeViewYGOController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
-    
     // create tableview programatically
     private let tableView: UITableView = {
         let table = UITableView()
@@ -30,11 +29,9 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         label.textAlignment = .center
         label.isHidden = true
         return label
-        //addHeader()
+        // addHeader()
     }()
-    
     var ygodb: [Data] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(label)
