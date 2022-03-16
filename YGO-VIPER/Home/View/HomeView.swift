@@ -25,6 +25,8 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         return table
     }()
     // bikin kalo misal salah kelaur label
+    var querySearch: String?
+
     private let label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -119,6 +121,6 @@ extension HomeViewYGOController: UISearchBarDelegate {
         guard let text = searchBar.text, !text.isEmpty else {
             return
         }
-        print(text)
+        presenter?.didGetSearch(with: text)
     }
 }

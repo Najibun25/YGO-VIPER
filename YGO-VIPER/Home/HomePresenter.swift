@@ -38,4 +38,7 @@ class HomePresenterYGO: HomePresenterProtocol {
         guard let view = view else { return }
         router?.navigatetoDetail(from: view, viewModel: viewModel)
     }
+    func didGetSearch(with text: String) {
+        interactor?.searchYGOdb(with: text)
+    }
 }

@@ -17,6 +17,7 @@ protocol HomeInteractorProtocol {
     var presenter: HomePresenterProtocol? { get set }
     // interactor hanya inform saat ready
     func getYGOdb()
+    func searchYGOdb(with query: String)
     // need to tell presenter
 }
 
@@ -27,6 +28,7 @@ protocol HomePresenterProtocol {
 
     func interactorDidFetchYGOdb(with result: Result< [Data], Error>)
     func didSelectedz(with viewModel: Data)
+    func didGetSearch(with query: String)
     // func getQuery()
 }
 
