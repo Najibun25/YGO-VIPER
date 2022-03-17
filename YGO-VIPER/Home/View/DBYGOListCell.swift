@@ -20,14 +20,12 @@ class DBYGOListCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         setDisplayCell()
-    }    
-
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    
     func setDisplayCell() {
         // cardName.textAlignment = .left
         cardName.numberOfLines = 0

@@ -22,18 +22,14 @@ class HomeRouterYGO: HomeRouterProtocol {
     }
     
     var entry: EntryPoint?
-    
     static func start() -> HomeRouterProtocol {
         let router = HomeRouterYGO()
         // assign VIP
         var view: HomeViewProtocol = HomeViewYGOController()
         var presenter: HomePresenterProtocol = HomePresenterYGO()
         var interactor: HomeInteractorProtocol = HomeInteractorYGO()
-        
         view.presenter = presenter
-        
         interactor.presenter = presenter
-        
         presenter.router = router
         presenter.view = view
         presenter.interactor = interactor

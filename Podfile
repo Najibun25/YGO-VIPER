@@ -5,5 +5,6 @@ target 'YGO-VIPER' do
 
     pod 'Kingfisher', '~> 7.0'
     pod 'SwiftLint'
+    pod 'netfox'
 
 end

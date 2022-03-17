@@ -35,7 +35,7 @@ protocol HomePresenterProtocol {
 typealias EntryPoint = HomeViewYGOController
 
 protocol HomeRouterProtocol {
-    //tell delegetae untuk kasih entry point di apps
+    // tell delegetae untuk kasih entry point di apps
     var entry: EntryPoint? { get }
     static func start() -> HomeRouterProtocol
     func navigatetoDetail(from view: HomeViewProtocol, viewModel: Data)

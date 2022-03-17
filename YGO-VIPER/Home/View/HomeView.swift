@@ -60,7 +60,7 @@ class HomeViewYGOController: UIViewController, HomeViewProtocol {
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 30))
         view.addSubview(navBar)
         self.navigationItem.title = "YGO MIni DB"
-        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 14/255.0,
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 20/255.0,
                                                                            green: 24/255.0,
                                                                            blue: 95/255.0,
                                                                            alpha: 1.0)
