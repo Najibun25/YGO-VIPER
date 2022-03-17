@@ -8,13 +8,11 @@
 import Foundation
 
 protocol DetailYGOPresenterProtocol {
-    //var view: DetailYGOPresenterProtocol {get set}
-    
-    //var viewModel: Data? {get set}
+    // var view: DetailYGOPresenterProtocol {get set}
+    // var viewModel: Data? {get set}
 }
 
 class DetailYGOPresenter: DetailYGOPresenterProtocol {
-    //var view: DetailYGOPresenterProtocol
-    
-    //var viewModel: Data?
+    // var view: DetailYGOPresenterProtocol
+    // var viewModel: Data?
 }

@@ -7,18 +7,10 @@
 
 import Foundation
 
-//Model,
-
-
-
+// Model
 
 struct YGOdb: Codable {
     let data: [Data]
-    //let dibawah kalaau mau pake yang https://jsonplaceholder.typicode.com/users
-    //let name: String
-    //dot name
-    // kalau pake yang news api
-    //let articles: [Article]
 }
 
 struct Data: Codable {
@@ -36,6 +28,8 @@ struct Data: Codable {
 //    let race: String
 //    let attribute: String
 //    let archetype: String
+    // need to disable identifier name because ambil data dari json nya pakai _
+    // swiftlint:disable identifier_name
     let card_images: [CardImages]
 }
 
